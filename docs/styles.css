@@ -85,9 +85,17 @@ h1 {
 .headline i { color: var(--accent); font-style: normal; margin: 0 4px; }
 
 .location {
-  margin: 6px 0 28px;
+  margin: 6px 0 18px;
   font-size: 13px;
   color: var(--muted);
+}
+
+.bio {
+  margin: 0 0 28px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  opacity: 0.88;
 }
 
 .links { display: grid; gap: 12px; }
