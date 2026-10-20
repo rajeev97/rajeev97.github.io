@@ -1,9 +1,12 @@
 :root {
-  --bg-1: #0f2a2a;
-  --bg-2: #1d4a40;
-  --accent: #b6e35c;
-  --ink: #f4f7f2;
-  --muted: #a9bcb4;
+  --bg-1: #10122d;
+  --bg-2: #1b2142;
+  --slate: #3d4e6a;
+  --teal: #74bfbf;
+  --accent: #8dfce6;
+  --sage: #8fb9a0;
+  --ink: #eef6f3;
+  --muted: #a7b8c4;
 }
 
 * { box-sizing: border-box; }
@@ -17,10 +20,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 15% 10%, rgba(255, 107, 157, 0.55), transparent 45%),
-    radial-gradient(circle at 90% 20%, rgba(255, 184, 77, 0.45), transparent 40%),
-    radial-gradient(circle at 80% 95%, rgba(56, 189, 248, 0.5), transparent 45%),
-    linear-gradient(160deg, #3b1f8f, #6d28d9 45%, #2563eb);
+    radial-gradient(circle at 85% 8%, rgba(141, 252, 230, 0.22), transparent 42%),
+    radial-gradient(circle at 10% 95%, rgba(116, 191, 191, 0.25), transparent 45%),
+    linear-gradient(160deg, var(--bg-1), var(--bg-2) 55%, var(--slate));
   background-attachment: fixed;
 }
 
@@ -37,7 +39,7 @@ body {
   margin: 0 auto 20px;
   border-radius: 50%;
   padding: 4px;
-  background: linear-gradient(135deg, #ff6b9d, #ffb84d, #4ade80, #38bdf8, #a78bfa);
+  background: linear-gradient(135deg, var(--accent), var(--teal), var(--sage));
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
 }
 
@@ -123,21 +125,21 @@ h1 {
 .link:focus-visible {
   transform: translateY(-2px);
   background: rgba(255, 255, 255, 0.13);
-  border-color: rgba(182, 227, 92, 0.6);
+  border-color: rgba(141, 252, 230, 0.6);
   outline: none;
 }
 
-.link.li     { --c1: #0a66c2; --c2: #38a3ff; }
-.link.resume { --c1: #f43f5e; --c2: #fb923c; }
-.link.gh     { --c1: #1f2937; --c2: #6b7280; }
-.link.cal    { --c1: #059669; --c2: #34d399; }
-.link.mail   { --c1: #7c3aed; --c2: #ec4899; }
+.link.li     { --c1: #74bfbf; --c2: #8dfce6; --fg: #10122d; }
+.link.resume { --c1: #8fb9a0; --c2: #cfe4cb; --fg: #10122d; }
+.link.gh     { --c1: #3d4e6a; --c2: #5c8085; --fg: #eef6f3; }
+.link.cal    { --c1: #5c8085; --c2: #74bfbf; --fg: #10122d; }
+.link.mail   { --c1: #1b2142; --c2: #3d4e6a; --fg: #8dfce6; }
 
 .link.li, .link.resume, .link.gh, .link.cal, .link.mail {
   background: linear-gradient(120deg, var(--c1), var(--c2));
-  border-color: rgba(255, 255, 255, 0.35);
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: var(--fg);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
 .link.li:hover, .link.resume:hover, .link.gh:hover, .link.cal:hover, .link.mail:hover,
