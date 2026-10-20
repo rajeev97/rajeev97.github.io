@@ -1,0 +1,167 @@
+:root {
+  --bg-1: #0f2a2a;
+  --bg-2: #1d4a40;
+  --accent: #b6e35c;
+  --ink: #f4f7f2;
+  --muted: #a9bcb4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 107, 157, 0.55), transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(255, 184, 77, 0.45), transparent 40%),
+    radial-gradient(circle at 80% 95%, rgba(56, 189, 248, 0.5), transparent 45%),
+    linear-gradient(160deg, #3b1f8f, #6d28d9 45%, #2563eb);
+  background-attachment: fixed;
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+}
+
+.avatar {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, #ff6b9d, #ffb84d, #4ade80, #38bdf8, #a78bfa);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.avatar img,
+.avatar .initials {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  background: var(--bg-1);
+}
+
+/* Initials sit behind the photo and show only if the photo is missing. */
+.avatar img { position: relative; z-index: 1; }
+.avatar .initials {
+  position: absolute;
+  inset: 4px;
+  width: auto;
+  height: auto;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.headline {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink);
+  opacity: 0.92;
+}
+
+.headline i { color: var(--accent); font-style: normal; margin: 0 4px; }
+
+.location {
+  margin: 6px 0 28px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.links { display: grid; gap: 12px; }
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.link span { flex: 1; text-align: center; padding-right: 28px; }
+
+.link svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.link:hover,
+.link:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(182, 227, 92, 0.6);
+  outline: none;
+}
+
+.link.li     { --c1: #0a66c2; --c2: #38a3ff; }
+.link.resume { --c1: #f43f5e; --c2: #fb923c; }
+.link.gh     { --c1: #1f2937; --c2: #6b7280; }
+.link.cal    { --c1: #059669; --c2: #34d399; }
+.link.mail   { --c1: #7c3aed; --c2: #ec4899; }
+
+.link.li, .link.resume, .link.gh, .link.cal, .link.mail {
+  background: linear-gradient(120deg, var(--c1), var(--c2));
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.link.li:hover, .link.resume:hover, .link.gh:hover, .link.cal:hover, .link.mail:hover,
+.link.li:focus-visible, .link.resume:focus-visible, .link.gh:focus-visible,
+.link.cal:focus-visible, .link.mail:focus-visible {
+  background: linear-gradient(120deg, var(--c1), var(--c2));
+  border-color: #fff;
+  filter: brightness(1.1);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.32);
+}
+
+.email-note {
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link { transition: none; }
+  .link:hover, .link:focus-visible { transform: none; }
+}
