@@ -1,0 +1,138 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{heading}{HTML}{174A5B}
+\definecolor{muted}{HTML}{4B5563}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\titleformat{\section}{\large\bfseries\color{heading}}{}{0pt}{}[\vspace{-2pt}\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{3pt}
+
+\newcommand{\resumeentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}Xr@{}}
+    \textbf{#1} & \textcolor{muted}{#4} \\
+    \textit{#2} & \textit{\textcolor{muted}{#3}}
+  \end{tabularx}\par\vspace{-3pt}
+}
+
+\newenvironment{compactitemize}{%
+  \begin{itemize}
+  \setlength{\itemsep}{0pt}
+  \setlength{\topsep}{1pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Rajeev Gundavarapu}\\[4pt]
+  \small
+  \href{mailto:rajeevgu97@gmail.com}{rajeevgu97@gmail.com}
+  \enspace $\cdot$ \enspace +1 949-245-4772
+  \enspace $\cdot$ \enspace \href{https://linkedin.com/in/rajeevanirudh}{LinkedIn}
+  \enspace $\cdot$ \enspace \href{https://github.com/rajeev97}{GitHub}
+  \enspace $\cdot$ \enspace Legal Status: US Citizen
+  \\[3pt]
+  {\large\bfseries Engineering Manager \textbar{} Applied AI \& Generative AI Architecture \textbar{} Machine Learning}
+\end{center}
+\vspace{-2pt}
+
+\small
+Technology leader and Engineering Manager with 7+ years of experience driving enterprise technology transformation, architecting scalable data platforms, and leading complex engineering initiatives from strategy through delivery. Currently spearheading the architecture and development of Capital One's conversational GenAI reporting platform to transform financial reporting and analytics. Further advancing expertise in artificial intelligence through graduate studies in Generative AI and Large Language Models at Carnegie Mellon University.
+\normalsize
+
+\section{Experience}
+
+\resumeentry{Software Engineering Manager (Lead Software Engineer)}{Capital One}{New York, NY}{Jun 2026--Present}
+\begin{compactitemize}
+  \item Personally architect DataAI, an in-development enterprise conversational reporting solution integrating LangChain, RAG, vector retrieval, and financial data to support grounded natural-language reporting and account, transaction, and balance insights; guide evaluation of GPT-OSS-120B, Gemma 4 26B, and Nemotron 3 Nano 30B.
+  \item Lead the engineering team delivering DataAI and reporting capabilities; set engineering priorities and technical direction, coordinate implementation, resolve design challenges, and own delivery of engineering initiatives.
+  \item Architected streaming ingestion from relational databases and the data lake into AWS OpenSearch; optimized mappings and Elasticsearch queries for filtering, sorting, and retrieval, reducing p95 retrieval time by more than 50\%.
+  \item Direct development of reusable Python reporting infrastructure and AWS Lambda processing components for enterprise reporting workflows.
+\end{compactitemize}
+
+\resumeentry{Principal Associate Software Engineer}{Capital One}{New York, NY}{Jun 2023--Jun 2026}
+\begin{compactitemize}
+  \item Developed NLP sentiment-classification models to identify customer complaints in call transcripts.
+  \item Architected the enterprise Python/FastAPI Transaction View API on PostgreSQL and AWS Fargate as the single source of truth for transaction and balance data, adopted by five mobile, web, and analytics teams.
+  \item Pioneered reporting architecture and PostgreSQL schemas; led legacy Oracle migration to PostgreSQL using AWS DMS and Lambda transformations.
+\end{compactitemize}
+
+\resumeentry{Senior Associate Software Engineer}{Capital One}{New York, NY}{Jun 2021--Jun 2023}
+\begin{compactitemize}
+  \item Built a Python ingestion service that transformed upstream files into byte streams and loaded them into the data lake with AWS Lambda, S3, Step Functions, and Boto3.
+  \item Designed the target architecture and led data-pipeline migration to a fully serverless AWS platform, removing server-managed infrastructure and reducing operating costs; automated sensitive-data tokenization and detokenization.
+\end{compactitemize}
+
+\resumeentry{Global Technology Analyst}{Bank of America}{New York, NY}{Jul 2019--Jun 2021}
+\begin{compactitemize}
+  \item Built a Python/Pandas/Scala data-lineage application to trace dataset relationships and visualize lineage in a web interface.
+  \item Prepared regulatory data for Federal Reserve CCAR reporting; designed Scala/RDF metadata schemas and publishing capabilities, and built R metrics dashboards.
+\end{compactitemize}
+
+\newpage
+\section{Additional Experience}
+\resumeentry{Data Science Teaching Assistant}{Fu Foundation School of Engineering and Applied Science, Columbia University}{New York, NY}{Aug 2020--Feb 2021}
+Supported fintech instruction in time-series analysis, machine learning, NLP, AWS, applied statistics, and exploratory data analysis.
+
+\vspace{3pt}
+\resumeentry{Software Engineering Intern}{Cytocybernetics}{Buffalo, NY}{Jul 2018--Aug 2018}
+Improved mathematical modeling algorithms and contributed to SC1/DC1 interfaces using GTK.
+
+\section{Projects}
+\small
+
+\textbf{Pythia-1B Fine-Tuning and Tool-Augmented Reasoning}\\[-2pt]
+Fine-tuned EleutherAI Pythia-1B on ASDiv with rank-16 LoRA and integrated a constrained arithmetic calculator. Accuracy was 63.1\% with calculator access versus 39.5\% without (+23.6 points); this measures tool access, not fine-tuning alone.
+
+\vspace{3pt}
+\textbf{Decoder-Only Transformer Language Model}\\[-2pt]
+Implemented GPT-style decoder blocks with causal multi-head attention, residuals, layer normalization, and GELU feed-forward layers; trained an autoregressive LM and implemented BPE tokenization, temperature sampling, and perplexity comparison with Pythia-1.4B.
+
+\vspace{3pt}
+\textbf{Common Crawl Language-Model Data Pipeline}\\[-2pt]
+Built a streaming Hugging Face dataset loader for Common Crawl WARC pages; extracted visible HTML text, filtered low-quality content, masked phone numbers and SSNs, and yielded accepted URL/text records.
+
+\vspace{3pt}
+\textbf{Airline Passenger Satisfaction Classification}\\[-2pt]
+Prepared 103,904 records with one-hot encoding and 5-neighbor KNN imputation; compared Logistic Regression, AdaBoost, and Random Forest. Notebook reports Random Forest test accuracy of 96.36\% and F1 of 0.958.
+
+\vspace{3pt}
+\textbf{IPL Auction Player Valuation and Performance Segmentation}\\[-2pt]
+Joined IPL batting/bowling statistics with salary data; engineered performance features, compared regression models using cross-validation, and segmented players with standardized K-Means and PCA visualization.
+
+\vspace{3pt}
+\textbf{Political Tweets and News Text Analysis}\\[-2pt]
+Collected candidate tweets and New York Times articles; removed retweets and duplicates, cleaned/stemmed text, and analyzed word frequencies and co-occurrence.
+
+\vspace{3pt}
+\textbf{Housing Recommendation System}\\[-2pt]
+Built an interactive county recommender ranking locations by cosine similarity to user-weighted preferences across seven factors, with supporting visualizations.
+
+\section{Education}
+
+\resumeentry{Graduate Specialization in Generative AI and Large Language Models, GPA: 4.0}{Carnegie Mellon University (In Progress)}{}{}
+\noindent Curriculum: LLM methods and applications, multimodal machine learning, and LLM systems.\par
+\vspace{3pt}
+\resumeentry{Master of Science in Analytics, GPA: 3.83}{Georgia Institute of Technology}{}{Jan 2020--Dec 2022}
+\vspace{3pt}
+\resumeentry{Bachelor of Science in Computer Science, GPA: 3.82, Summa Cum Laude}{University at Buffalo, SUNY}{}{Aug 2017--May 2019}
+
+\section{Technical Skills}
+\textbf{Languages:} Python, SQL, Scala, R, C.\\[2pt]
+\textbf{ML and LLMs:} PyTorch, scikit-learn, Hugging Face Transformers, PEFT, LoRA, NLP, classification, model evaluation, tokenization.\\[2pt]
+\textbf{Generative AI:} LangChain, retrieval-augmented generation (RAG), embeddings, vector databases and search, tool use.\\[2pt]
+\textbf{Backend and data:} FastAPI, Pandas, ETL, data modeling.\\[2pt]
+\textbf{Cloud:} AWS Lambda, S3, EC2, Fargate, Step Functions, Boto3, DMS, Amazon Aurora PostgreSQL, AWS OpenSearch.\\[2pt]
+\textbf{Databases/search:} PostgreSQL, Oracle, Elasticsearch.
+
+\end{document}
